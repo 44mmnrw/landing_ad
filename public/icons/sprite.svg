@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol id="icon-phone" viewBox="0 0 16 16">
+        <g clip-path="url(#clip-phone)">
+            <path d="M14.6667 11.28V13.28C14.6674 13.4657 14.6294 13.6494 14.555 13.8196C14.4806 13.9897 14.3715 14.1424 14.2347 14.2679C14.0979 14.3934 13.9364 14.489 13.7605 14.5485C13.5846 14.608 13.3982 14.63 13.2133 14.6133C11.1619 14.3904 9.19133 13.6894 7.46 12.5667C5.84922 11.5431 4.48356 10.1774 3.46 8.56667C2.33332 6.82747 1.63216 4.84733 1.41333 2.78667C1.39667 2.60231 1.41858 2.41651 1.47767 2.24108C1.53675 2.06566 1.63171 1.90446 1.75651 1.76775C1.88131 1.63104 2.0332 1.52181 2.20253 1.44701C2.37185 1.37222 2.55489 1.33351 2.74 1.33333H4.74C5.06354 1.33015 5.37719 1.44472 5.62251 1.65569C5.86782 1.86666 6.02805 2.15963 6.07333 2.48C6.15775 3.12004 6.3143 3.74848 6.54 4.35333C6.6297 4.59195 6.64911 4.85128 6.59594 5.10059C6.54277 5.3499 6.41924 5.57874 6.24 5.76L5.39333 6.60667C6.34237 8.2757 7.7243 9.65763 9.39333 10.6067L10.24 9.76C10.4213 9.58076 10.6501 9.45723 10.8994 9.40406C11.1487 9.35089 11.4081 9.3703 11.6467 9.46C12.2515 9.6857 12.88 9.84225 13.52 9.92667C13.8438 9.97235 14.1396 10.1355 14.351 10.385C14.5624 10.6345 14.6748 10.9531 14.6667 11.28Z" stroke="rgba(255,255,255,0.7)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+    </symbol>
+
+    <symbol id="icon-message-square" viewBox="0 0 16 16">
+        <path d="M14 10C14 10.3536 13.8595 10.6928 13.6095 10.9428C13.3594 11.1929 13.0203 11.3333 12.6667 11.3333H4.66667L2 14V3.33333C2 2.97971 2.14048 2.64057 2.39052 2.39052C2.64057 2.14048 2.97971 2 3.33333 2H12.6667C13.0203 2 13.3594 2.14048 13.6095 2.39052C13.8595 2.64057 14 2.97971 14 3.33333V10Z" stroke="rgba(255,255,255,0.7)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-mail" viewBox="0 0 16 16">
+        <path d="M13.3333 2.66667H2.66667C1.93029 2.66667 1.33333 3.26362 1.33333 4V12C1.33333 12.7364 1.93029 13.3333 2.66667 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V4C14.6667 3.26362 14.0697 2.66667 13.3333 2.66667Z" stroke="rgba(255,255,255,0.7)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.6667 4.66667L8.68667 8.46667C8.48085 8.59562 8.24288 8.66401 8 8.66401C7.75712 8.66401 7.51915 8.59562 7.31333 8.46667L1.33333 4.66667" stroke="rgba(255,255,255,0.7)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-about-calendar" viewBox="0 0 24 24">
+        <path d="M8 2V6" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 2V6" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 10H21" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-about-globe" viewBox="0 0 24 24">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 2C9.43223 4.69615 8 8.27674 8 12C8 15.7233 9.43223 19.3038 12 22C14.5678 19.3038 16 15.7233 16 12C16 8.27674 14.5678 4.69615 12 2Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 12H22" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-about-shield" viewBox="0 0 24 24">
+        <path d="M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0203 11.67 21.94C7.5 20.5 4 18 4 13V6C4 5.73478 4.10536 5.48043 4.29289 5.29289C4.48043 5.10536 4.73478 5 5 5C7 5 9.5 3.8 11.24 2.28C11.4519 2.099 11.7214 1.99955 12 1.99955C12.2786 1.99955 12.5481 2.099 12.76 2.28C14.51 3.81 17 5 19 5C19.2652 5 19.5196 5.10536 19.7071 5.29289C19.8946 5.48043 20 5.73478 20 6V13Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-about-clock" viewBox="0 0 24 24">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 6V12L16 14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-service-box" viewBox="0 0 28 28">
+        <path d="M12.8333 25.3517C13.188 25.5565 13.5904 25.6643 14 25.6643C14.4096 25.6643 14.812 25.5565 15.1667 25.3517L23.3333 20.685C23.6877 20.4804 23.982 20.1862 24.1868 19.832C24.3916 19.4777 24.4996 19.0758 24.5 18.6667V9.33333C24.4996 8.92415 24.3916 8.52228 24.1868 8.16802C23.982 7.81377 23.6877 7.51959 23.3333 7.315L15.1667 2.64833C14.812 2.44354 14.4096 2.33573 14 2.33573C13.5904 2.33573 13.188 2.44354 12.8333 2.64833L4.66667 7.315C4.31231 7.51959 4.01798 7.81377 3.81321 8.16802C3.60843 8.52228 3.50042 8.92415 3.5 9.33333V18.6667C3.50042 19.0758 3.60843 19.4777 3.81321 19.832C4.01798 20.1862 4.31231 20.4804 4.66667 20.685L12.8333 25.3517Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 25.6667V14" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.83833 8.16667L14 14L24.1617 8.16667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.75 4.98167L19.25 10.99" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-service-alert" viewBox="0 0 28 28">
+        <path d="M25.3517 21L16.0183 4.66667C15.8148 4.30757 15.5197 4.00889 15.1631 3.80108C14.8065 3.59328 14.4011 3.48379 13.9883 3.48379C13.5756 3.48379 13.1702 3.59328 12.8136 3.80108C12.457 4.00889 12.1618 4.30757 11.9583 4.66667L2.625 21C2.4193 21.3563 2.31143 21.7606 2.31234 22.1719C2.31326 22.5833 2.42291 22.9871 2.63019 23.3425C2.83747 23.6978 3.13501 23.992 3.49264 24.1953C3.85028 24.3986 4.25531 24.5037 4.66667 24.5H23.3333C23.7427 24.4996 24.1448 24.3915 24.4992 24.1865C24.8535 23.9815 25.1478 23.6869 25.3523 23.3323C25.5568 22.9777 25.6644 22.5755 25.6643 22.1661C25.6642 21.7567 25.5564 21.3545 25.3517 21Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 10.5V15.1667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 19.8333H14.0117" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-service-gear" viewBox="0 0 28 28">
+        <path d="M14 23.3333C16.4754 23.3333 18.8493 22.35 20.5997 20.5997C22.35 18.8493 23.3333 16.4754 23.3333 14C23.3333 11.5246 22.35 9.15068 20.5997 7.40034C18.8493 5.65 16.4754 4.66667 14 4.66667C11.5246 4.66667 9.15068 5.65 7.40034 7.40034C5.65 9.15068 4.66667 11.5246 4.66667 14C4.66667 16.4754 5.65 18.8493 7.40034 20.5997C9.15068 22.35 11.5246 23.3333 14 23.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 16.3333C14.6188 16.3333 15.2123 16.0875 15.6499 15.6499C16.0875 15.2123 16.3333 14.6188 16.3333 14C16.3333 13.3812 16.0875 12.7877 15.6499 12.3501C15.2123 11.9125 14.6188 11.6667 14 11.6667C13.3812 11.6667 12.7877 11.9125 12.3501 12.3501C11.9125 12.7877 11.6667 13.3812 11.6667 14C11.6667 14.6188 11.9125 15.2123 12.3501 15.6499C12.7877 16.0875 13.3812 16.3333 14 16.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 2.33333V4.66667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 25.6667V23.3333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.8333 24.1033L18.6667 22.085" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.8333 11.9817L8.16667 3.89667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.1033 19.8333L22.085 18.6667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.89667 8.16667L5.915 9.33333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.3333 14H25.6667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.33333 14H4.66667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.1033 8.16667L22.085 9.33333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.89667 19.8333L5.915 18.6667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.8333 3.89667L18.6667 5.915" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.8333 16.0183L8.16667 24.1033" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-service-doc" viewBox="0 0 28 28">
+        <path d="M17.5 2.33333H7C6.38116 2.33333 5.78767 2.57917 5.35008 3.01675C4.9125 3.45434 4.66667 4.04783 4.66667 4.66667V23.3333C4.66667 23.9522 4.9125 24.5457 5.35008 24.9832C5.78767 25.4208 6.38116 25.6667 7 25.6667H21C21.6188 25.6667 22.2123 25.4208 22.6499 24.9832C23.0875 24.5457 23.3333 23.9522 23.3333 23.3333V8.16667L17.5 2.33333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.3333 2.33333V7C16.3333 7.61884 16.5792 8.21233 17.0168 8.64992C17.4543 9.0875 18.0478 9.33333 18.6667 9.33333H23.3333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.6667 10.5H9.33333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.6667 15.1667H9.33333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.6667 19.8333H9.33333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-adv-manager" viewBox="0 0 32 32">
+        <path d="M21.3333 28V25.3333C21.3333 23.9188 20.7714 22.5623 19.7712 21.5621C18.771 20.5619 17.4145 20 16 20H8C6.58551 20 5.22896 20.5619 4.22876 21.5621C3.22857 22.5623 2.66667 23.9188 2.66667 25.3333V28" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 14.6667C14.9455 14.6667 17.3333 12.2789 17.3333 9.33333C17.3333 6.38781 14.9455 4 12 4C9.05448 4 6.66667 6.38781 6.66667 9.33333C6.66667 12.2789 9.05448 14.6667 12 14.6667Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21.3333 14.6667L24 17.3333L29.3333 12" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-adv-shield" viewBox="0 0 32 32">
+        <path d="M26.6667 17.3333C26.6667 24 22 27.3333 16.4533 29.2667C16.1629 29.3651 15.8474 29.3604 15.56 29.2533C10 27.3333 5.33333 24 5.33333 17.3333V8C5.33333 7.64638 5.47381 7.30724 5.72386 7.05719C5.97391 6.80714 6.31304 6.66667 6.66667 6.66667C9.33333 6.66667 12.6667 5.06667 14.9867 3.04C15.2691 2.79866 15.6285 2.66607 16 2.66607C16.3715 2.66607 16.7309 2.79866 17.0133 3.04C19.3467 5.08 22.6667 6.66667 25.3333 6.66667C25.687 6.66667 26.0261 6.80714 26.2761 7.05719C26.5262 7.30724 26.6667 7.64638 26.6667 8V17.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 16L14.6667 18.6667L20 13.3333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-step-search" viewBox="0 0 28 28">
+        <path d="M12.8333 22.1667C17.988 22.1667 22.1667 17.988 22.1667 12.8333C22.1667 7.67868 17.988 3.5 12.8333 3.5C7.67868 3.5 3.5 7.67868 3.5 12.8333C3.5 17.988 7.67868 22.1667 12.8333 22.1667Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.5 24.5L19.4833 19.4833" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-step-truck" viewBox="0 0 28 28">
+        <path d="M16.3333 21V7C16.3333 6.38116 16.0875 5.78767 15.6499 5.35008C15.2123 4.9125 14.6188 4.66667 14 4.66667H4.66667C4.04783 4.66667 3.45434 4.9125 3.01675 5.35008C2.57917 5.78767 2.33333 6.38116 2.33333 7V19.8333C2.33333 20.1428 2.45625 20.4395 2.67504 20.6583C2.89383 20.8771 3.19058 21 3.5 21H5.83333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17.5 21H10.5" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.1667 21H24.5C24.8094 21 25.1062 20.8771 25.325 20.6583C25.5438 20.4395 25.6667 20.1428 25.6667 19.8333V15.575C25.6662 15.3102 25.5757 15.0535 25.41 14.847L21.35 9.772C21.2409 9.63536 21.1025 9.525 20.9449 9.44907C20.7874 9.37314 20.6149 9.33358 20.44 9.33333H16.3333" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.8333 23.3333C21.122 23.3333 22.1667 22.2887 22.1667 21C22.1667 19.7113 21.122 18.6667 19.8333 18.6667C18.5447 18.6667 17.5 19.7113 17.5 21C17.5 22.2887 18.5447 23.3333 19.8333 23.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.16667 23.3333C9.45533 23.3333 10.5 22.2887 10.5 21C10.5 19.7113 9.45533 18.6667 8.16667 18.6667C6.878 18.6667 5.83333 19.7113 5.83333 21C5.83333 22.2887 6.878 23.3333 8.16667 23.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-step-dollar" viewBox="0 0 28 28">
+        <path d="M14 2.33333V25.6667" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.8333 5.83333H11.0833C10.0004 5.83333 8.96175 6.26354 8.19598 7.02931C7.43021 7.79509 7 8.8337 7 9.91667C7 10.9996 7.43021 12.0382 8.19598 12.804C8.96175 13.5698 10.0004 14 11.0833 14H16.9167C17.9996 14 19.0382 14.4302 19.804 15.196C20.5698 15.9618 21 17.0004 21 18.0833C21 19.1663 20.5698 20.2049 19.804 20.9707C19.0382 21.7365 17.9996 22.1667 16.9167 22.1667H7" stroke="var(--stroke-0, #1F2020)" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-stat-market" viewBox="0 0 24 24">
+        <path d="M22 7L13.5 15.5L8.5 10.5L2 17" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 7H22V13" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-stat-delivery" viewBox="0 0 24 24">
+        <path d="M11 21.73C11.304 21.9055 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69752 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69752 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 22V12" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.29 7L12 12L20.71 7" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.5 4.27L16.5 9.42" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-stat-team" viewBox="0 0 24 24">
+        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 21V19C21.9993 18.1137 21.7044 17.2528 21.1614 16.5523C20.6184 15.8519 19.8581 15.3516 19 15.13" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-stat-driver" viewBox="0 0 24 24">
+        <path d="M14 18V6C14 5.46957 13.7893 4.96086 13.4142 4.58579C13.0391 4.21071 12.5304 4 12 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V17C2 17.2652 2.10536 17.5196 2.29289 17.7071C2.48043 17.8946 2.73478 18 3 18H5" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 18H9" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19 18H21C21.2652 18 21.5196 17.8946 21.7071 17.7071C21.8946 17.5196 22 17.2652 22 17V13.35C21.9996 13.1231 21.922 12.903 21.78 12.726L18.3 8.376C18.2065 8.25888 18.0878 8.16428 17.9528 8.0992C17.8178 8.03412 17.6699 8.00021 17.52 8H14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17 20C18.1046 20 19 19.1046 19 18C19 16.8954 18.1046 16 17 16C15.8954 16 15 16.8954 15 18C15 19.1046 15.8954 20 17 20Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 20C8.10457 20 9 19.1046 9 18C9 16.8954 8.10457 16 7 16C5.89543 16 5 16.8954 5 18C5 19.1046 5.89543 20 7 20Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-stat-contract" viewBox="0 0 24 24">
+        <path d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 15L11 17L15 13" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-mission-target" viewBox="0 0 32 32">
+        <path d="M16 29.3333C23.3638 29.3333 29.3333 23.3638 29.3333 16C29.3333 8.6362 23.3638 2.66667 16 2.66667C8.6362 2.66667 2.66667 8.6362 2.66667 16C2.66667 23.3638 8.6362 29.3333 16 29.3333Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 18.6667C17.4728 18.6667 18.6667 17.4728 18.6667 16C18.6667 14.5272 17.4728 13.3333 16 13.3333C14.5272 13.3333 13.3333 14.5272 13.3333 16C13.3333 17.4728 14.5272 18.6667 16 18.6667Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-client-building" viewBox="0 0 24 24">
+        <path d="M6 22V4C6 3.46957 6.21071 2.96086 6.58579 2.58579C6.96086 2.21071 7.46957 2 8 2H16C16.5304 2 17.0391 2.21071 17.4142 2.58579C17.7893 2.96086 18 3.46957 18 4V22H6Z" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 12H4C3.46957 12 2.96086 12.2107 2.58579 12.5858C2.21071 12.9609 2 13.4696 2 14V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H6" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 9H20C20.5304 9 21.0391 9.21071 21.4142 9.58579C21.7893 9.96086 22 10.4696 22 11V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22H18" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 6H14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 10H14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 14H14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 18H14" stroke="var(--stroke-0, #1F2020)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-client-check" viewBox="0 0 20 20">
+        <path d="M18.1675 8.33333C18.5481 10.2011 18.2768 12.1429 17.399 13.8348C16.5212 15.5268 15.0899 16.8667 13.3438 17.6311C11.5976 18.3955 9.64219 18.5382 7.80358 18.0353C5.96498 17.5325 4.35433 16.4145 3.24023 14.8679C2.12613 13.3212 1.57594 11.4394 1.68139 9.53616C1.78684 7.63295 2.54157 5.82341 3.81971 4.40931C5.09785 2.99521 6.82215 2.06203 8.70505 1.76538C10.588 1.46873 12.5157 1.82655 14.1667 2.77917" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.5 9.16667L10 11.6667L18.3333 3.33333" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-client-pill-check" viewBox="0 0 20 20">
+        <path d="M18.1675 8.33333C18.5481 10.2011 18.2768 12.1429 17.399 13.8348C16.5212 15.5268 15.0899 16.8667 13.3438 17.6311C11.5976 18.3955 9.64219 18.5382 7.80358 18.0353C5.96498 17.5325 4.35433 16.4145 3.24023 14.8679C2.12613 13.3212 1.57594 11.4394 1.68139 9.53616C1.78684 7.63295 2.54157 5.82341 3.81971 4.40931C5.09785 2.99521 6.82215 2.06203 8.70505 1.76538C10.588 1.46873 12.5157 1.82655 14.1667 2.77917" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.5 9.16667L10 11.6667L18.3333 3.33333" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-geo-map-pin" viewBox="0 0 32 32">
+        <path d="M26.6667 13.3333C26.6667 22.6667 16 30.6667 16 30.6667C16 30.6667 5.33334 22.6667 5.33334 13.3333C5.33334 10.5044 6.45715 7.79125 8.45754 5.79086C10.4579 3.79047 13.171 2.66666 16 2.66666C18.829 2.66666 21.5421 3.79047 23.5425 5.79086C25.5429 7.79125 26.6667 10.5044 26.6667 13.3333Z" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 17.3333C18.2091 17.3333 20 15.5425 20 13.3333C20 11.1242 18.2091 9.33333 16 9.33333C13.7909 9.33333 12 11.1242 12 13.3333C12 15.5425 13.7909 17.3333 16 17.3333Z" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-route-arrow-right" viewBox="0 0 20 20">
+        <path d="M4.16667 10H15.8333" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 4.16667L15.8333 10L10 15.8333" fill="none" stroke="var(--stroke-0, #7ED957)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-button-calculator" viewBox="0 0 20 20">
+        <path d="M15 1.66667H5C4.07953 1.66667 3.33333 2.41286 3.33333 3.33333V16.6667C3.33333 17.5871 4.07953 18.3333 5 18.3333H15C15.9205 18.3333 16.6667 17.5871 16.6667 16.6667V3.33333C16.6667 2.41286 15.9205 1.66667 15 1.66667Z" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.66667 5H13.3333" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.3333 11.6667V15" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.3333 8.33333H13.3417" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 8.33333H10.0083" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.66667 8.33333H6.675" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 11.6667H10.0083" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.66667 11.6667H6.675" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 15H10.0083" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.66667 15H6.675" fill="none" stroke="var(--stroke-0, #1F2020)" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-telegram" viewBox="0 0 240.1 240.1">
+        <defs>
+            <linearGradient id="tg-gradient" gradientUnits="userSpaceOnUse" x1="-838.041" y1="660.581" x2="-838.041" y2="660.3427" gradientTransform="matrix(1000 0 0 -1000 838161 660581)">
+                <stop offset="0" style="stop-color:#2AABEE"/>
+                <stop offset="1" style="stop-color:#229ED9"/>
+            </linearGradient>
+        </defs>
+        <circle fill-rule="evenodd" clip-rule="evenodd" fill="url(#tg-gradient)" cx="120.1" cy="120.1" r="120.1"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M54.3,118.8c35-15.2,58.3-25.3,70-30.2c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z"/>
+    </symbol>
+
+    <defs>
+        <clipPath id="clip-phone">
+            <rect width="16" height="16" fill="white"/>
+        </clipPath>
+    </defs>
+</svg>
