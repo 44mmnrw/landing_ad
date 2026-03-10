@@ -1,4 +1,6 @@
 @php
+    $plainSetting = static fn ($value, string $default = ''): string => trim(html_entity_decode(strip_tags((string) ($value ?? $default)), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+
     $resolveBackground = static function (?string $path): string {
         if (blank($path)) {
             return '';
@@ -248,7 +250,7 @@
                 <svg viewBox="0 0 20 20" role="img" focusable="false" aria-hidden="true">
                     <use href="{{ asset('icons/sprite.svg#icon-client-pill-check') }}"></use>
                 </svg>
-                <span>{{ $siteSettings['clients_trust_text'] ?? 'Более 100 довольных клиентов по всей России' }}</span>
+                <span>{{ $plainSetting($siteSettings['clients_trust_text'] ?? null, 'Более 100 довольных клиентов по всей России') }}</span>
             </div>
         </div>
     </section>

@@ -2,13 +2,14 @@
     $footerNav = $landingSections->get('footer_navigation');
     $footerContacts = $landingSections->get('footer_contacts');
     $footerServices = $landingSections->get('footer_services');
+    $plainSetting = static fn ($value, string $default = ''): string => trim(html_entity_decode(strip_tags((string) ($value ?? $default)), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
 @endphp
 
 <footer id="contacts" class="site-footer">
     <div class="container footer-grid">
         <div>
-            <h3>{{ $siteSettings['site_logo'] ?? '🚚 Авто Доставка' }}</h3>
-            <p>{{ $siteSettings['site_tagline'] ?? 'Надежные грузоперевозки по России и СНГ с 2018 года' }}</p>
+            <h3>{{ $plainSetting($siteSettings['site_logo'] ?? null, '🚚 Авто Доставка') }}</h3>
+            <p>{{ $plainSetting($siteSettings['site_tagline'] ?? null, 'Надежные грузоперевозки по России и СНГ с 2018 года') }}</p>
         </div>
         <div>
             <h4>{{ $footerNav?->title ?: 'Навигация' }}</h4>
@@ -34,7 +35,7 @@
                         <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                             <use href="{{ asset('icons/sprite.svg#icon-phone') }}"></use>
                         </svg>
-                        {{ $siteSettings['contact_phone'] ?? '+7 912 280 51 38' }}
+                        {{ $plainSetting($siteSettings['contact_phone'] ?? null, '+7 912 280 51 38') }}
                     </a>
                 </li>
                 <li>
@@ -42,7 +43,7 @@
                         <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                             <use href="{{ asset('icons/sprite.svg#icon-mail') }}"></use>
                         </svg>
-                        {{ $siteSettings['contact_email'] ?? 'st_air@mail.ru' }}
+                        {{ $plainSetting($siteSettings['contact_email'] ?? null, 'st_air@mail.ru') }}
                     </a>
                 </li>
                 @if(!empty($siteSettings['contact_telegram_url']))
@@ -80,7 +81,7 @@
         </div>
     </div>
     <div class="container footer-bottom">
-        <span>{{ $siteSettings['footer_copyright'] ?? '© 2026 Авто Доставка. Все права защищены.' }}</span>
+        <span>{{ $plainSetting($siteSettings['footer_copyright'] ?? null, '© 2026 Авто Доставка. Все права защищены.') }}</span>
         <span>{!! $siteSettings['footer_geo_text'] ?? 'Политика конфиденциальности' !!}</span>
     </div>
 </footer>

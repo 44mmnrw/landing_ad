@@ -1,6 +1,10 @@
+@php
+    $plainSetting = static fn ($value, string $default = ''): string => trim(html_entity_decode(strip_tags((string) ($value ?? $default)), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+@endphp
+
 <header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="{{ url('/') }}">{{ $siteSettings['site_logo'] ?? '🚚 Авто Доставка' }}</a>
+        <a class="logo" href="{{ url('/') }}">{{ $plainSetting($siteSettings['site_logo'] ?? null, '🚚 Авто Доставка') }}</a>
         <nav class="header-nav">
             <a href="{{ url('/#hero') }}">Главная</a>
             <a href="{{ url('/#services') }}">Услуги</a>
