@@ -99,6 +99,13 @@ class QuoteRequestResource extends Resource
                     ->badge(),
                 TextColumn::make('status')
                     ->label('Статус')
+                    ->formatStateUsing(fn (?string $state): string => match ($state) {
+                        'new' => 'Новая',
+                        'in_progress' => 'В работе',
+                        'done' => 'Завершена',
+                        'rejected' => 'Отклонена',
+                        default => (string) ($state ?? '—'),
+                    })
                     ->badge(),
             ])
             ->filters([

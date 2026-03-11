@@ -3,10 +3,8 @@
 namespace App\Filament\Resources\LandingSectionResource\RelationManagers;
 
 use App\Support\LandingContentCatalog;
-use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
@@ -116,11 +114,6 @@ class ItemsRelationManager extends RelationManager
                 EditAction::make()
                     ->slideOver(),
                 DeleteAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ]);
     }
 }

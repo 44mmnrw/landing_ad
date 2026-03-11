@@ -27,4 +27,9 @@ class Shipment extends Model
     {
         return $this->hasMany(ShipmentStatus::class);
     }
+
+    public function trackingRequests(): HasMany
+    {
+        return $this->hasMany(TrackingRequest::class);
+    }
 }

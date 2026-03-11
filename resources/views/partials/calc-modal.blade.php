@@ -1,4 +1,9 @@
-<div class="calc-modal" id="calcModal" aria-hidden="true" data-auto-open="{{ $errors->any() ? '1' : '0' }}">
+@php
+    /** @var \Illuminate\Support\ViewErrorBag $viewErrors */
+    $viewErrors = $errors ?? new \Illuminate\Support\ViewErrorBag();
+@endphp
+
+<div class="calc-modal" id="calcModal" aria-hidden="true" data-auto-open="{{ $viewErrors->any() ? '1' : '0' }}">
     <div class="calc-modal__overlay" data-calc-modal-close></div>
     <div class="calc-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="calcModalTitle">
         <div class="calc-modal__head">
@@ -14,7 +19,7 @@
                 <div class="form-alert form-alert--success">{{ session('quote_success') }}</div>
             @endif
 
-            @if($errors->any())
+            @if($viewErrors->any())
                 <div class="form-alert form-alert--error">Проверьте корректность заполнения полей и попробуйте снова.</div>
             @endif
 

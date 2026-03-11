@@ -282,6 +282,196 @@ body {
     word-break: break-word;
 }
 
+/* 404 page */
+.not-found-page {
+    min-height: 100vh;
+    background: var(--soft);
+}
+
+.not-found-main {
+    min-height: calc(100vh - 80px);
+    padding: 48px 16px;
+    display: grid;
+    place-items: center;
+}
+
+.not-found-card {
+    position: relative;
+    width: min(672px, 100%);
+    background: #fff;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 48px 48px 40px;
+    text-align: center;
+}
+
+.not-found-decor {
+    position: absolute;
+    color: var(--brand);
+    opacity: 0.11;
+    pointer-events: none;
+}
+
+.not-found-decor svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+}
+
+.not-found-decor svg * {
+    fill: none;
+}
+
+.not-found-decor--top {
+    top: 16px;
+    right: 16px;
+    width: 96px;
+    height: 96px;
+}
+
+.not-found-decor--bottom {
+    left: 16px;
+    bottom: 28px;
+    width: 110px;
+    height: 110px;
+}
+
+.not-found-icon-wrap {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: var(--brand);
+    margin: 0 auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center;
+}
+
+.not-found-icon-wrap svg {
+    width: 64px;
+    height: 64px;
+    fill: none;
+}
+
+.not-found-icon-wrap svg * {
+    fill: none;
+}
+
+.not-found-code {
+    margin: 24px 0 0;
+    font-size: clamp(92px, 16vw, 128px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.not-found-title {
+    margin: 16px 0 0;
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.12;
+}
+
+.not-found-text {
+    margin: 16px auto 0;
+    max-width: 448px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.56;
+}
+
+.not-found-actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.not-found-btn {
+    min-height: 56px;
+    min-width: 210px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 14px 24px;
+}
+
+.not-found-btn--primary {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #1f2020;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-btn--primary:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+}
+
+.not-found-btn--secondary {
+    background: #fff;
+    border-color: var(--brand);
+    color: #1f2020;
+}
+
+.not-found-btn--secondary:hover {
+    background: #f8fafc;
+}
+
+.not-found-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+}
+
+.not-found-btn svg * {
+    fill: none;
+}
+
+.not-found-links-wrap {
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+}
+
+.not-found-links-wrap p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(31, 32, 32, 0.6);
+}
+
+.not-found-links-wrap nav {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--muted);
+}
+
+.not-found-links-wrap a {
+    color: rgba(31, 32, 32, 0.7);
+    text-decoration: none;
+}
+
+.not-found-links-wrap a:hover {
+    color: #1f2020;
+}
+
+.not-found-links-wrap span {
+    color: rgba(31, 32, 32, 0.3);
+}
+
 .hero-scroll-indicator {
     position: absolute;
     left: 50%;
@@ -1220,6 +1410,38 @@ body {
     .trust-pill {
         width: 100%;
         justify-content: center;
+    }
+
+    .not-found-main {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .not-found-card {
+        padding: 32px 20px 28px;
+    }
+
+    .not-found-icon-wrap {
+        width: 104px;
+        height: 104px;
+    }
+
+    .not-found-icon-wrap svg {
+        width: 52px;
+        height: 52px;
+    }
+
+    .not-found-actions {
+        margin-top: 24px;
+    }
+
+    .not-found-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .not-found-links-wrap {
+        margin-top: 36px;
     }
 }
 
