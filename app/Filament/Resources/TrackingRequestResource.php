@@ -48,10 +48,10 @@ class TrackingRequestResource extends Resource
                     ->label('Искали код')
                     ->searchable()
                     ->placeholder('—'),
-                TextColumn::make('shipment.code')
+                TextColumn::make('search_code')
                     ->label('Найденный трек-код')
-                    ->searchable()
-                    ->placeholder('Не найден'),
+                    ->formatStateUsing(fn (?string $state, TrackingRequest $record): string => $record->is_found ? ($state ?: '—') : 'Не найден')
+                    ->searchable(),
                 IconColumn::make('is_found')
                     ->label('Найдено')
                     ->boolean(),

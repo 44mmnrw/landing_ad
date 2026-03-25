@@ -28,9 +28,9 @@ class LatestTrackingRequestsTable extends TableWidget
                     ->label('Искали')
                     ->placeholder('—')
                     ->searchable(),
-                TextColumn::make('shipment.code')
+                TextColumn::make('search_code')
                     ->label('Найденный код')
-                    ->placeholder('Не найден'),
+                    ->formatStateUsing(fn (?string $state, TrackingRequest $record): string => $record->is_found ? ($state ?: '—') : 'Не найден'),
                 IconColumn::make('is_found')
                     ->label('Найдено')
                     ->boolean(),

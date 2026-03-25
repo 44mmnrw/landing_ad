@@ -31,3 +31,9 @@
 - После установки `ext-intl` обязательно перезапускать сервисы PHP-FPM и веб-сервера (`php8.3-fpm`, `nginx`/`apache2`).
 - Проверка после установки: `php -m | grep -i intl` и `php --ri intl`.
 - Если на production отсутствует `ext-intl`, временные обходные решения допустимы только как краткосрочная мера до серверной установки расширения.
+
+## Production Access
+- Сервер: `85.239.57.126`.
+- SSH доступ: есть.
+- Пользователь сайта: `axecode_tech_usr`.
+- Корневой каталог проекта: `/var/www/axecode_tech_usr/data/www/landing-ad.axecode.tech`.

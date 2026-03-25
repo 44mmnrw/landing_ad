@@ -10,7 +10,7 @@ use BackedEnum;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -65,6 +65,14 @@ class LandingSectionResource extends Resource
                 Textarea::make('subtitle')
                     ->label('Подзаголовок')
                     ->rows(3),
+                TextInput::make('clients_trust_text')
+                    ->label('Текст доверия (плашка в блоке клиентов)')
+                    ->maxLength(255)
+                    ->visible(fn (callable $get): bool => (string) $get('code') === 'clients')
+                    ->afterStateHydrated(function ($component, $record): void {
+                        $component->state((string) data_get($record?->meta, 'trust_text', ''));
+                    })
+                    ->dehydrated(false),
                 FileUpload::make('background_image')
                     ->label('Фон секции')
                     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/gif'])
@@ -98,17 +106,10 @@ class LandingSectionResource extends Resource
                         ->visible(fn (callable $get): bool => (bool) $get('carousel_enabled'))
                         ->dehydrated(false),
                 ]),
-                KeyValue::make('meta')
-                    ->label('Meta (ключ-значение)')
-                    ->keyLabel('Ключ')
-                    ->valueLabel('Значение')
-                    ->afterStateHydrated(function ($component, $state): void {
-                        $meta = is_array($state) ? $state : [];
-                        unset($meta['carousel_enabled'], $meta['carousel_speed_ms']);
-                        $component->state($meta);
-                    })
+                Hidden::make('meta')
                     ->dehydrateStateUsing(function ($state, callable $get): array {
                         $meta = is_array($state) ? $state : [];
+
                         $carouselEnabled = (bool) $get('carousel_enabled');
                         $speed = max(500, (int) ($get('carousel_speed_ms') ?: 3500));
 
@@ -119,9 +120,20 @@ class LandingSectionResource extends Resource
                             unset($meta['carousel_enabled'], $meta['carousel_speed_ms']);
                         }
 
+                        if ((string) $get('code') === 'clients') {
+                            $trustText = trim((string) ($get('clients_trust_text') ?? ''));
+
+                            if ($trustText !== '') {
+                                $meta['trust_text'] = $trustText;
+                            } else {
+                                unset($meta['trust_text']);
+                            }
+                        } else {
+                            unset($meta['trust_text']);
+                        }
+
                         return $meta;
-                    })
-                    ->helperText('Для hero/mission/cta здесь задаются дополнительные параметры кнопок и акцентного текста.'),
+                    }),
                 TextInput::make('sort_order')
                     ->label('Порядок')
                     ->numeric()

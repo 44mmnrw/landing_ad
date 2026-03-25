@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            ShipmentSeeder::class,
             LandingContentSeeder::class,
         ]);
     }

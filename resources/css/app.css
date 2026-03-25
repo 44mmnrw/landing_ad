@@ -73,6 +73,15 @@ body {
     font-size: 22px;
     text-decoration: none;
     color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-image {
+    display: block;
+    max-height: 48px;
+    width: auto;
+    max-width: 240px;
 }
 
 .header-nav {
@@ -438,11 +447,13 @@ body {
     margin-top: 48px;
     border-top: 1px solid var(--line);
     padding-top: 24px;
+    padding-bottom: 48px;
 }
 
 .not-found-links-wrap p {
     margin: 0;
     font-size: 14px;
+    padding-top: 56px;
     line-height: 20px;
     color: rgba(31, 32, 32, 0.6);
 }
@@ -484,6 +495,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 7px;
+    animation: hero-indicator-float 1.8s ease-in-out infinite;
 }
 
 .hero-scroll-indicator span {
@@ -491,6 +503,46 @@ body {
     height: 12px;
     border-radius: 999px;
     background: rgba(31, 32, 32, 0.5);
+    animation: hero-wheel-scroll 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes hero-wheel-scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    72% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+}
+
+@keyframes hero-indicator-float {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(3px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-scroll-indicator,
+    .hero-scroll-indicator span {
+        animation: none;
+    }
 }
 
 .section {
@@ -1009,6 +1061,15 @@ body {
     position: relative;
 }
 
+.geo-countries-section {
+    padding-top: 56px;
+    padding-bottom: 36px;
+}
+
+.geo-routes-section {
+    padding-top: 24px;
+}
+
 .geo-countries-grid {
     gap: 16px;
 }
@@ -1050,9 +1111,9 @@ body {
 .routes-title {
     text-align: center;
     margin: 24px 0 24px;
-    font-size: 24px;
+    font-size: clamp(30px, 4vw, 40px);
     font-weight: 700;
-    line-height: 1.33;
+    line-height: 1.2;
 }
 
 .tag {
@@ -1157,7 +1218,7 @@ body {
 
 .clients-section {
     padding-top: 96px;
-    padding-bottom: 96px;
+    padding-bottom: 48px;
 }
 
 .clients-section .container {
@@ -1272,6 +1333,13 @@ body {
 .site-footer h4 {
     color: #fff;
     margin-top: 0;
+}
+
+.footer-logo-image {
+    display: block;
+    max-height: 56px;
+    width: auto;
+    max-width: 260px;
 }
 
 .site-footer ul {
@@ -1471,9 +1539,15 @@ body {
     place-items: center;
 }
 
-.tracking-icon-wrap img {
+.tracking-icon-wrap img,
+.tracking-icon-wrap svg {
     width: 32px;
     height: 32px;
+}
+
+.tracking-icon-wrap svg,
+.tracking-icon-wrap svg * {
+    fill: none;
 }
 
 .tracking-hero h1 {
@@ -1540,9 +1614,15 @@ body {
     background: var(--brand-dark);
 }
 
-.tracking-search-btn img {
+.tracking-search-btn img,
+.tracking-search-btn svg {
     width: 20px;
     height: 20px;
+}
+
+.tracking-search-btn svg,
+.tracking-search-btn svg * {
+    fill: none;
 }
 
 .tracking-hint {
@@ -1588,9 +1668,15 @@ body {
     gap: 8px;
 }
 
-.tracking-route img {
+.tracking-route img,
+.tracking-route svg {
     width: 20px;
     height: 20px;
+}
+
+.tracking-route svg,
+.tracking-route svg * {
+    fill: none;
 }
 
 .tracking-cargo-meta {
@@ -1649,9 +1735,15 @@ body {
     display: none;
 }
 
-.tracking-step-line img {
+.tracking-step-line img,
+.tracking-step-line svg {
     width: 24px;
     height: 24px;
+}
+
+.tracking-step-line svg,
+.tracking-step-line svg * {
+    fill: none;
 }
 
 .tracking-step-line .dot {
@@ -1705,9 +1797,15 @@ body {
     gap: 8px;
 }
 
-.tracking-step-card p img {
+.tracking-step-card p img,
+.tracking-step-card p svg {
     width: 16px;
     height: 16px;
+}
+
+.tracking-step-card p svg,
+.tracking-step-card p svg * {
+    fill: none;
 }
 
 .tracking-empty {

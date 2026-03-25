@@ -36,6 +36,7 @@ class LandingContentCatalog
             'hero' => 'Используются: title, subtitle, background_image и meta: primary_button_text/primary_button_url/secondary_button_text/secondary_button_url.',
             'mission' => 'Используются: title, subtitle, background_image и meta: accent_text.',
             'cta' => 'Используются: title, subtitle и meta: button_text/button_url.',
+            'clients' => 'Используются: title, subtitle и meta: trust_text (текст плашки доверия).',
             'geography_routes' => 'Элементы этой секции выводят title + badge (срок доставки).',
             'footer_navigation' => 'Элементы: title, meta.url (например /#services).',
             'footer_contacts' => 'Элементы: title, meta.url (tel:/mailto:) или пусто для обычного текста.',
@@ -49,14 +50,15 @@ class LandingContentCatalog
     {
         return [
             'site_logo' => 'Логотип/название в шапке',
-            'site_name' => 'Название сайта',
             'site_tagline' => 'Подпись в футере',
-            'clients_trust_text' => 'Текст доверия в блоке клиентов',
+            'favicon_path' => 'Favicon сайта',
             'footer_copyright' => 'Нижняя строка футера (копирайт)',
             'footer_geo_text' => 'Нижняя строка футера (география)',
             'contact_phone' => 'Телефон',
             'contact_email' => 'Email',
             'contact_telegram_url' => 'Ссылка на Telegram',
+            'yandex_metrika_counter_id' => 'Яндекс.Метрика (номер счётчика)',
+            'google_analytics_measurement_id' => 'Google Analytics (ID счётчика)',
         ];
     }
 

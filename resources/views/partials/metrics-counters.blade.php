@@ -1,0 +1,44 @@
+@php
+    $yandexMetrikaCounterId = trim((string) ($siteSettings['yandex_metrika_counter_id'] ?? ''));
+    $googleAnalyticsMeasurementId = trim((string) ($siteSettings['google_analytics_measurement_id'] ?? ''));
+@endphp
+
+@if($yandexMetrikaCounterId !== '')
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments);
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym({{ json_encode($yandexMetrikaCounterId, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}, 'init', {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/{{ urlencode($yandexMetrikaCounterId) }}" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+@endif
+
+@if($googleAnalyticsMeasurementId !== '')
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ urlencode($googleAnalyticsMeasurementId) }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', {{ json_encode($googleAnalyticsMeasurementId, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }});
+    </script>
+@endif

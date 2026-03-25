@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shipment;
+use App\Models\TrackingEvent;
 use App\Models\TrackingRequest;
+use App\Support\TrackingEventCatalog;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,37 +13,30 @@ class TrackingController extends Controller
     public function index(Request $request): View
     {
         $request->validate([
-            'code' => ['nullable', 'string', 'max:50'],
+            'code' => ['nullable', 'string', 'max:20'],
         ]);
 
         $searchedWithCode = $request->query('code') !== null;
         $searchCode = mb_strtoupper(trim((string) $request->query('code', '')));
 
-        $shipment = null;
+        $events = collect();
+        $latestEvent = null;
 
         if ($searchCode !== '') {
-            $shipment = Shipment::query()
-                ->with(['statuses' => fn ($query) => $query->orderBy('sort_order')])
-                ->where('code', $searchCode)
-                ->first();
-        }
+            $events = TrackingEvent::query()
+                ->where('tracking_number', $searchCode)
+                ->orderByDesc('occurred_at')
+                ->orderByDesc('id')
+                ->limit(20)
+                ->get();
 
-        if (! $searchedWithCode && ! $shipment) {
-            $shipment = Shipment::query()
-                ->with(['statuses' => fn ($query) => $query->orderBy('sort_order')])
-                ->orderBy('code')
-                ->first();
-
-            if ($shipment) {
-                $searchCode = $shipment->code;
-            }
+            $latestEvent = $events->first();
         }
 
         if ($searchedWithCode) {
             TrackingRequest::query()->create([
-                'shipment_id' => $shipment?->id,
                 'search_code' => $searchCode !== '' ? $searchCode : null,
-                'is_found' => (bool) $shipment,
+                'is_found' => (bool) $latestEvent,
                 'source_page' => $request->fullUrl(),
                 'ip_address' => $request->ip(),
                 'user_agent' => $request->userAgent(),
@@ -50,7 +44,10 @@ class TrackingController extends Controller
         }
 
         return view('tracking', [
-            'shipment' => $shipment,
+            'latestEvent' => $latestEvent,
+            'events' => $events,
+            'statusLabels' => TrackingEventCatalog::statusLabels(),
+            'eventLabels' => TrackingEventCatalog::eventLabels(),
             'searchCode' => $searchCode,
             'searchedWithCode' => $searchedWithCode,
         ]);

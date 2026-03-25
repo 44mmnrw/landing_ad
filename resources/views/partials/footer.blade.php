@@ -3,16 +3,36 @@
     $footerContacts = $landingSections->get('footer_contacts');
     $footerServices = $landingSections->get('footer_services');
     $plainSetting = static fn ($value, string $default = ''): string => trim(html_entity_decode(strip_tags((string) ($value ?? $default)), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+
+    $logoTitle = $plainSetting($siteSettings['site_logo'] ?? null);
+    $logoImagePath = trim((string) ($siteSettings['site_logo_image_path'] ?? ''));
+    $logoImageUrl = '';
+
+    if ($logoImagePath !== '') {
+        if (str_starts_with($logoImagePath, 'http://') || str_starts_with($logoImagePath, 'https://') || str_starts_with($logoImagePath, '//')) {
+            $logoImageUrl = $logoImagePath;
+        } elseif (str_starts_with($logoImagePath, '/')) {
+            $logoImageUrl = asset(ltrim($logoImagePath, '/'));
+        } else {
+            $logoImageUrl = asset('storage/' . ltrim($logoImagePath, '/'));
+        }
+    }
 @endphp
 
 <footer id="contacts" class="site-footer">
     <div class="container footer-grid">
         <div>
-            <h3>{{ $plainSetting($siteSettings['site_logo'] ?? null, '🚚 Авто Доставка') }}</h3>
-            <p>{{ $plainSetting($siteSettings['site_tagline'] ?? null, 'Надежные грузоперевозки по России и СНГ с 2018 года') }}</p>
+            <h3>
+                @if($logoImageUrl !== '')
+                    <img class="footer-logo-image" src="{{ $logoImageUrl }}" alt="{{ $logoTitle !== '' ? $logoTitle : 'Логотип сайта' }}">
+                @else
+                    {{ $logoTitle }}
+                @endif
+            </h3>
+            <p>{{ $plainSetting($siteSettings['site_tagline'] ?? null) }}</p>
         </div>
         <div>
-            <h4>{{ $footerNav?->title ?: 'Навигация' }}</h4>
+            <h4>{{ $footerNav?->title }}</h4>
             <ul>
                 @foreach(($footerNav?->items ?? collect()) as $item)
                     <li><a href="{{ $item->meta['url'] ?? '#' }}">{{ $item->title }}</a></li>
@@ -20,7 +40,7 @@
             </ul>
         </div>
         <div>
-            <h4>{{ $footerServices?->title ?: 'Услуги' }}</h4>
+            <h4>{{ $footerServices?->title }}</h4>
             <ul>
                 @foreach(($footerServices?->items ?? collect()) as $item)
                     <li>{{ $item->title }}</li>
@@ -28,22 +48,22 @@
             </ul>
         </div>
         <div>
-            <h4>{{ $footerContacts?->title ?: 'Контакты' }}</h4>
+            <h4>{{ $footerContacts?->title }}</h4>
             <ul>
                 <li>
-                    <a class="footer-contact-link" href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+79122805138') }}">
+                    <a class="footer-contact-link" href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '') }}">
                         <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                             <use href="{{ asset('icons/sprite.svg#icon-phone') }}"></use>
                         </svg>
-                        {{ $plainSetting($siteSettings['contact_phone'] ?? null, '+7 912 280 51 38') }}
+                        {{ $plainSetting($siteSettings['contact_phone'] ?? null) }}
                     </a>
                 </li>
                 <li>
-                    <a class="footer-contact-link" href="mailto:{{ $siteSettings['contact_email'] ?? 'st_air@mail.ru' }}">
+                    <a class="footer-contact-link" href="mailto:{{ $siteSettings['contact_email'] ?? '' }}">
                         <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                             <use href="{{ asset('icons/sprite.svg#icon-mail') }}"></use>
                         </svg>
-                        {{ $plainSetting($siteSettings['contact_email'] ?? null, 'st_air@mail.ru') }}
+                        {{ $plainSetting($siteSettings['contact_email'] ?? null) }}
                     </a>
                 </li>
                 @if(!empty($siteSettings['contact_telegram_url']))
@@ -81,7 +101,9 @@
         </div>
     </div>
     <div class="container footer-bottom">
-        <span>{{ $plainSetting($siteSettings['footer_copyright'] ?? null, '© 2026 Авто Доставка. Все права защищены.') }}</span>
-        <span>{!! $siteSettings['footer_geo_text'] ?? 'Политика конфиденциальности' !!}</span>
+        <span>{{ $plainSetting($siteSettings['footer_copyright'] ?? null) }}</span>
+        <span>{!! $siteSettings['footer_geo_text'] ?? '' !!}</span>
     </div>
 </footer>
+
+@include('partials.metrics-counters')
