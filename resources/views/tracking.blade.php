@@ -33,7 +33,7 @@
 
     <section class="tracking-search-card">
         <form class="tracking-form" autocomplete="off" method="get" action="{{ route('tracking') }}">
-            <input id="trackingInput" name="code" type="text" value="{{ $searchCode }}" placeholder="Введите трек-код" aria-label="Номер отслеживания">
+            <input id="trackingInput" name="code" type="text" value="{{ $searchCode }}" placeholder="Введите трек-код" aria-label="Номер отслеживания" autocomplete="one-time-code" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
             <button type="submit" class="tracking-search-btn">
                 <svg viewBox="0 0 28 28" role="img" focusable="false" aria-hidden="true">
                     <use href="{{ asset('icons/sprite.svg') }}#icon-step-search"></use>
