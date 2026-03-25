@@ -12,12 +12,17 @@ class TrackingController extends Controller
 {
     public function index(Request $request): View
     {
+        $trackingNumber = $request->query('tracking_number');
+        $legacyCode = $request->query('code');
+
         $request->validate([
+            'tracking_number' => ['nullable', 'string', 'max:20'],
             'code' => ['nullable', 'string', 'max:20'],
         ]);
 
-        $searchedWithCode = $request->query('code') !== null;
-        $searchCode = mb_strtoupper(trim((string) $request->query('code', '')));
+        $searchedWithCode = $trackingNumber !== null || $legacyCode !== null;
+        $rawSearchCode = $trackingNumber ?? $legacyCode ?? '';
+        $searchCode = mb_strtoupper(trim((string) $rawSearchCode));
 
         $events = collect();
         $latestEvent = null;
