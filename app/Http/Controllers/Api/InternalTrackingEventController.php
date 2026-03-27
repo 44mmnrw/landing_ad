@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RevokeTrackingEventRequest;
 use App\Http\Requests\StoreTrackingEventRequest;
 use App\Models\TrackingEvent;
 use App\Support\TrackingEventCatalog;
@@ -71,6 +72,35 @@ class InternalTrackingEventController extends Controller
         return response()->json([
             'ok' => true,
             'duplicate' => false,
+        ]);
+    }
+
+    public function revoke(RevokeTrackingEventRequest $request)
+    {
+        $payload = $request->validated();
+
+        $eventUid = trim((string) ($payload['event_uid'] ?? ''));
+        if ($eventUid === '' && isset($payload['event_id']) && is_numeric($payload['event_id'])) {
+            $eventUid = 'trip_event_'.(int) $payload['event_id'];
+        }
+
+        if ($eventUid === '') {
+            return response()->json([
+                'message' => 'The given data was invalid.',
+                'errors' => [
+                    'event_uid' => ['The event_uid field is required.'],
+                ],
+            ], 422);
+        }
+
+        $deleted = TrackingEvent::query()
+            ->where('event_uid', $eventUid)
+            ->delete();
+
+        return response()->json([
+            'ok' => true,
+            'event_uid' => $eventUid,
+            'state' => $deleted > 0 ? 'revoked' : 'already_revoked_or_missing',
         ]);
     }
 }

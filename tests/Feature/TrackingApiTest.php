@@ -16,6 +16,7 @@ class TrackingApiTest extends TestCase
         parent::setUp();
 
         config()->set('tracking.internal.hmac_secret', 'test-shared-secret');
+        config()->set('tracking.internal.require_https', false);
         config()->set('tracking.internal.allowed_ips', ['127.0.0.1']);
         config()->set('tracking.internal.clock_skew_seconds', 300);
     }

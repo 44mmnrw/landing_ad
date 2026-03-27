@@ -57,6 +57,7 @@ class LandingContentCatalog
             'contact_phone' => 'Телефон',
             'contact_email' => 'Email',
             'contact_telegram_url' => 'Ссылка на Telegram',
+            'tracking_internal_allowed_ips' => 'Tracking API: разрешенные IP (через запятую)',
             'yandex_metrika_counter_id' => 'Яндекс.Метрика (номер счётчика)',
             'google_analytics_measurement_id' => 'Google Analytics (ID счётчика)',
         ];
