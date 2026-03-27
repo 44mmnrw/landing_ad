@@ -8,6 +8,29 @@ log() {
   printf '[deploy] %s\n' "$1"
 }
 
+ensure_git_origin_access() {
+  if git ls-remote --heads origin "$BRANCH" >/dev/null 2>&1; then
+    return 0
+  fi
+
+  local origin_url
+  origin_url="$(git remote get-url origin 2>/dev/null || true)"
+
+  if [[ "$origin_url" == git@github.com:* ]]; then
+    local https_url
+    https_url="${origin_url#git@github.com:}"
+    https_url="https://github.com/${https_url}"
+
+    log "SSH access to origin failed, switching remote to HTTPS: $https_url"
+    git remote set-url origin "$https_url"
+  fi
+
+  if ! git ls-remote --heads origin "$BRANCH" >/dev/null 2>&1; then
+    log "Cannot access git origin for branch $BRANCH"
+    exit 1
+  fi
+}
+
 cd "$APP_DIR"
 
 if [[ ! -f artisan ]]; then
@@ -19,6 +42,8 @@ if ! php -m | grep -qi '^intl$'; then
   log "PHP extension intl is missing. Install php8.3-intl and restart php8.3-fpm + web server."
   exit 1
 fi
+
+ensure_git_origin_access
 
 log "Fetching branch $BRANCH"
 git fetch origin "$BRANCH"
