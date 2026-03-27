@@ -31,6 +31,15 @@ ensure_git_origin_access() {
   fi
 }
 
+prepare_clean_worktree() {
+  if ! git diff --quiet || ! git diff --cached --quiet || [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+    local stash_name
+    stash_name="auto-deploy-$(date +%Y%m%d-%H%M%S)"
+    log "Working tree is dirty, creating stash: $stash_name"
+    git stash push --include-untracked -m "$stash_name" >/dev/null
+  fi
+}
+
 cd "$APP_DIR"
 
 if [[ ! -f artisan ]]; then
@@ -48,6 +57,7 @@ else
 fi
 
 ensure_git_origin_access
+prepare_clean_worktree
 
 log "Fetching branch $BRANCH"
 git fetch origin "$BRANCH"
