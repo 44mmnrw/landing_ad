@@ -3,6 +3,10 @@ setlocal EnableExtensions EnableDelayedExpansion
 
 cd /d "%~dp0.."
 
+if "%~1"=="/?" goto :usage
+if /I "%~1"=="-h" goto :usage
+if /I "%~1"=="--help" goto :usage
+
 set "COMMIT_MSG=%~1"
 if "%COMMIT_MSG%"=="" set "COMMIT_MSG=chore: deploy %DATE% %TIME%"
 
@@ -51,4 +55,9 @@ if errorlevel 1 (
 )
 
 echo [OK] Deploy completed successfully.
+exit /b 0
+
+:usage
+echo Usage: script_ai\deploy.bat [commit_message] [branch]
+echo Example: script_ai\deploy.bat "chore: release" main
 exit /b 0

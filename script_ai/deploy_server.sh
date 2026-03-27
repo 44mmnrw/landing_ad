@@ -38,7 +38,11 @@ if [[ ! -f artisan ]]; then
   exit 1
 fi
 
-if ! php -m | grep -qi '^intl$'; then
+if php --ri intl >/dev/null 2>&1; then
+  :
+elif php -m 2>/dev/null | grep -qi 'intl'; then
+  :
+else
   log "PHP extension intl is missing. Install php8.3-intl and restart php8.3-fpm + web server."
   exit 1
 fi
