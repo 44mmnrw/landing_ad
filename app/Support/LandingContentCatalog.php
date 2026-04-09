@@ -50,6 +50,7 @@ class LandingContentCatalog
     {
         return [
             'site_logo' => 'Логотип/название в шапке',
+            'site_name' => 'Название сайта',
             'site_tagline' => 'Подпись в футере',
             'favicon_path' => 'Favicon сайта',
             'footer_copyright' => 'Нижняя строка футера (копирайт)',
