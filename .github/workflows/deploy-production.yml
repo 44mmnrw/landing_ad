@@ -20,14 +20,30 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 85.239.57.126
-          username: axecode_tech_usr
+          host: 83.217.203.66
+          username: avtodostavka_usr
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           port: ${{ secrets.PROD_SSH_PORT || 22 }}
           script_stop: true
           script: |
             set -e
-            APP_DIR="/var/www/axecode_tech_usr/data/www/landing-ad.axecode.tech"
+            APP_DIR="/var/www/avtodostavka_usr/data/www/avtodostavka.su"
             BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
+            REPO_URL="https://github.com/${{ github.repository }}.git"
+
+            mkdir -p "$APP_DIR"
+
+            if [ ! -f "$APP_DIR/script_ai/deploy_server.sh" ]; then
+              if [ -n "$(find "$APP_DIR" -mindepth 1 -maxdepth 1 -print -quit 2>/dev/null)" ]; then
+                BACKUP="${APP_DIR%/}_bootstrap_backup_$(date +%Y%m%d-%H%M%S)"
+                mkdir -p "$BACKUP"
+                shopt -s dotglob nullglob
+                mv "$APP_DIR"/* "$BACKUP"/
+                shopt -u dotglob nullglob
+              fi
+
+              git clone --branch "$BRANCH" --single-branch "$REPO_URL" "$APP_DIR"
+            fi
+
             cd "$APP_DIR"
-            bash script_ai/deploy_server.sh "$BRANCH"
+            APP_DIR="$APP_DIR" REPO_URL="$REPO_URL" bash script_ai/deploy_server.sh "$BRANCH"
