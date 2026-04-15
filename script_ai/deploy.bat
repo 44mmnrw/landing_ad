@@ -22,9 +22,9 @@ set "AUTO_COMMIT=y"
 set "AUTO_COMMIT_MSG=AutoDeploy"
 set "NONINTERACTIVE=0"
 
-set "PROD_DB_NAME=landing_ad"
-set "PROD_DB_USER=landing_ad"
-set "PROD_DB_PASS="
+set "PROD_DB_NAME=land_avtodostavka"
+set "PROD_DB_USER=land_avtodos_usr"
+set "PROD_DB_PASS=>LFM]Jd9]tAYwNO0"
 
 set "SSH_KEY_PATH=%USERPROFILE%\.ssh\id_ed25519_work_prod_2026"
 set "SSH_KEY_PASSPHRASE=wwwdev"
@@ -181,7 +181,8 @@ set "MYSQL_CNF_REMOTE=/tmp/avto_mysql_prod.cnf"
 (
 	echo [client]
 	echo user=%PROD_DB_USER%
-	echo password=%PROD_DB_PASS%
+	<nul set /p "=password=%PROD_DB_PASS%"
+	echo.
 ) > "%MYSQL_CNF_LOCAL%"
 
 call :fn_run_scp "%MYSQL_CNF_LOCAL%" "%SERVER_USER%@%SERVER_HOST%:%MYSQL_CNF_REMOTE%"
@@ -313,7 +314,7 @@ if errorlevel 1 (
 
 echo.
 echo [2/4] Update code on server ^(git pull^)...
-set "REMOTE_CMD=cd %SERVER_PATH% && if git status --porcelain | grep -q .; then echo [WARN] Server working tree has local changes. Auto-stashing before deploy...; git stash push -u -m deploy-auto-stash; fi && git pull --ff-only %GIT_REMOTE% %GIT_BRANCH%"
+set "REMOTE_CMD=cd %SERVER_PATH% && if git status --porcelain | grep -q .; then echo [WARN] Server working tree has local changes. Auto-stashing before deploy...; git stash push -m deploy-auto-stash; fi && git pull --ff-only %GIT_REMOTE% %GIT_BRANCH%"
 call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "!REMOTE_CMD!"
 if errorlevel 1 (
 	echo [ERROR] git pull failed on server.
@@ -323,7 +324,7 @@ echo [OK] Server code updated.
 
 echo.
 echo [3/4] Build frontend on server ^(npm ci ^&^& npm run build^)...
-set "REMOTE_CMD=cd %SERVER_PATH% && npm ci && npm run build"
+set "REMOTE_CMD=cd %SERVER_PATH% && if command -v npm >/dev/null 2>&1; then npm ci && npm run build; elif [ -x node/bin/node ] && [ -x node/bin/npm ]; then PATH=\"$PWD/node/bin:$PATH\" npm ci && PATH=\"$PWD/node/bin:$PATH\" npm run build; else echo [ERROR] npm is not available and portable Node.js was not found in node/bin; exit 1; fi"
 call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "!REMOTE_CMD!"
 if errorlevel 1 (
 	echo [ERROR] Frontend build failed on server.
@@ -333,15 +334,15 @@ echo [OK] Frontend built.
 
 echo.
 echo [4/4] Composer + migrate + cache on server...
-call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "cd %SERVER_PATH% && php artisan optimize:clear"
-if errorlevel 1 (
-	echo [ERROR] php artisan optimize:clear failed on server.
-	exit /b 1
-)
-
 call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "cd %SERVER_PATH% && composer install --no-dev --optimize-autoloader --no-interaction"
 if errorlevel 1 (
 	echo [ERROR] composer install failed on server.
+	exit /b 1
+)
+
+call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "cd %SERVER_PATH% && php artisan optimize:clear"
+if errorlevel 1 (
+	echo [ERROR] php artisan optimize:clear failed on server.
 	exit /b 1
 )
 
