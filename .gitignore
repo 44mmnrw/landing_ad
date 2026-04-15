@@ -16,7 +16,9 @@
 /public/build
 /public/hot
 /public/storage
-/script_ai
+/script_ai/*
+!/script_ai/deploy.bat
+!/script_ai/deploy_server.sh
 /storage/*.key
 /storage/pail
 /vendor
