@@ -48,6 +48,22 @@ REM ================================================================
 if /I "%~1"=="--help" goto :help
 if /I "%~1"=="-h" goto :help
 
+REM Direct mode shortcuts: avoid any ambiguity in argument parsing.
+if "%~1"=="1" (
+	call :fn_import_db
+	goto :done
+)
+if "%~1"=="2" (
+	call :fn_deploy_code
+	goto :done
+)
+if "%~1"=="3" (
+	echo [INFO] Safe mode: skip DB import, run deploy with migrations only.
+	call :fn_deploy_code
+	goto :done
+)
+if "%~1"=="0" goto :done
+
 if /I "%~1"=="--auto" (
 	set "AUTO_MODE=1"
 	set "NONINTERACTIVE=1"
@@ -65,23 +81,6 @@ if /I "%~1"=="--auto" (
 
 	if not "%~3"=="" set "AUTO_COMMIT=%~3"
 	if not "%~4"=="" set "AUTO_COMMIT_MSG=%~4"
-)
-
-if "%~1"=="1" (
-	set "CHOICE=1"
-	set "NONINTERACTIVE=1"
-)
-if "%~1"=="2" (
-	set "CHOICE=2"
-	set "NONINTERACTIVE=1"
-)
-if "%~1"=="3" (
-	set "CHOICE=3"
-	set "NONINTERACTIVE=1"
-)
-if "%~1"=="0" (
-	set "CHOICE=0"
-	set "NONINTERACTIVE=1"
 )
 
 REM ================================================================
