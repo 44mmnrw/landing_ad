@@ -10,9 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	const closeButtons = modal.querySelectorAll('[data-calc-modal-close]');
 	const successAlert = modal.querySelector('.form-alert--success');
 	const phoneInput = modal.querySelector('input[name="phone"]');
+	const consentInput = modal.querySelector('input[name="consent"]');
+	const submitButton = modal.querySelector('.calc-submit');
 	const closeAnimationDuration = 6000;
 	const successCloseDelay = 700;
 	let closeAnimationTimer = null;
+
+	const syncSubmitState = () => {
+		if (!consentInput || !submitButton) {
+			return;
+		}
+
+		submitButton.disabled = !consentInput.checked;
+	};
 
 	const formatPhone = (rawValue) => {
 		const digits = String(rawValue).replace(/\D/g, '');
@@ -130,6 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		phoneInput.value = formatPhone(phoneInput.value);
 	}
+
+	if (consentInput) {
+		consentInput.addEventListener('change', syncSubmitState);
+	}
+
+	syncSubmitState();
 
 	if (modal.dataset.autoOpen === '1' || successAlert) {
 		openModal();

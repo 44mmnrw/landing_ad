@@ -137,8 +137,35 @@ echo [0/4] Unlock SSH key...
 call :fn_unlock_ssh_key
 if errorlevel 1 exit /b 1
 
-call :fn_require_db_config
-if errorlevel 1 exit /b 1
+set "LOCAL_DB_HOST="
+set "LOCAL_DB_NAME="
+set "LOCAL_DB_USER="
+set "LOCAL_DB_PASS="
+
+if not exist "%LOCAL_PROJECT%\.env" (
+	echo [ERROR] Local .env not found: %LOCAL_PROJECT%\.env
+	exit /b 1
+)
+
+for /f "usebackq tokens=1,* delims==" %%A in ("%LOCAL_PROJECT%\.env") do (
+	if /I "%%A"=="DB_HOST" set "LOCAL_DB_HOST=%%B"
+	if /I "%%A"=="DB_DATABASE" set "LOCAL_DB_NAME=%%B"
+	if /I "%%A"=="DB_USERNAME" set "LOCAL_DB_USER=%%B"
+	if /I "%%A"=="DB_PASSWORD" set "LOCAL_DB_PASS=%%B"
+)
+
+if not defined LOCAL_DB_HOST (
+	echo [ERROR] DB_HOST not found in .env
+	exit /b 1
+)
+if not defined LOCAL_DB_NAME (
+	echo [ERROR] DB_DATABASE not found in .env
+	exit /b 1
+)
+if not defined LOCAL_DB_USER (
+	echo [ERROR] DB_USERNAME not found in .env
+	exit /b 1
+)
 
 echo [1/4] Create local dump "%LOCAL_DB_NAME%"...
 
@@ -323,7 +350,7 @@ echo [OK] Server code updated.
 
 echo.
 echo [3/4] Build frontend on server ^(npm ci ^&^& npm run build^)...
-set "REMOTE_CMD=cd %SERVER_PATH% && if command -v npm >/dev/null 2>&1; then npm ci && npm run build; elif [ -x node/bin/node ] && [ -x node/bin/npm ]; then PATH=\"$PWD/node/bin:$PATH\" npm ci && PATH=\"$PWD/node/bin:$PATH\" npm run build; else echo [ERROR] npm is not available and portable Node.js was not found in node/bin; exit 1; fi"
+set "REMOTE_CMD=cd %SERVER_PATH% && if command -v npm >/dev/null 2>&1; then npm ci && npm run build; elif [ -x \"$HOME/data/bin/npm\" ] && [ -x \"$HOME/data/bin/node\" ]; then PATH=\"$HOME/data/bin:$PATH\" npm ci && PATH=\"$HOME/data/bin:$PATH\" npm run build; elif [ -x node/bin/node ] && [ -x node/bin/npm ]; then PATH=\"$PWD/node/bin:$PATH\" npm ci && PATH=\"$PWD/node/bin:$PATH\" npm run build; else echo [ERROR] npm is not available globally and portable Node.js was not found in node/bin; exit 1; fi"
 call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "!REMOTE_CMD!"
 if errorlevel 1 (
 	echo [ERROR] Frontend build failed on server.

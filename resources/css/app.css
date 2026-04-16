@@ -2089,6 +2089,16 @@ body {
     background: var(--brand-dark);
 }
 
+.calc-submit:disabled {
+    background: #cfd6cc;
+    color: rgba(31, 32, 32, 0.55);
+    cursor: not-allowed;
+}
+
+.calc-submit:disabled:hover {
+    background: #cfd6cc;
+}
+
 body.modal-open {
     overflow: hidden;
 }

@@ -56,7 +56,7 @@
             </label>
 
             <label class="calc-consent">
-                <input type="checkbox" name="consent" @checked(old('consent')) required>
+                <input type="checkbox" name="consent" @checked(old('consent', 1)) required>
                 <span>
                     Я согласен на
                     <a href="{{ route('custom-pages.show', ['slug' => 'privacy']) }}" target="_blank" rel="noopener noreferrer">
