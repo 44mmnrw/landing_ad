@@ -15,6 +15,7 @@ set "SERVER_PATH=/var/www/avtodostavka_usr/data/www/avtodostavka.su"
 set "GIT_BRANCH=main"
 set "GIT_REMOTE=origin"
 set "GIT_REPO_SSH_URL=git@github.com:44mmnrw/landing_ad.git"
+set "GIT_REPO_HTTPS_URL=https://github.com/44mmnrw/landing_ad.git"
 
 set "DEFAULT_ACTION=2"
 set "AUTO_MODE=0"
@@ -329,12 +330,13 @@ if %_size% gtr 0 (
 )
 
 echo.
-echo [1.5/4] Check git access on server for private repo...
-call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "cd %SERVER_PATH% && GIT_SSH_COMMAND='ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new' git ls-remote --heads %GIT_REMOTE% %GIT_BRANCH% > /dev/null"
+echo [1.5/4] Check git access on server...
+set "REMOTE_CMD=cd %SERVER_PATH% && if git ls-remote --heads %GIT_REMOTE% %GIT_BRANCH% > /dev/null 2>&1; then echo [OK] Server git access is ready.; else echo [WARN] SSH git access failed, switching origin to HTTPS...; git remote set-url %GIT_REMOTE% %GIT_REPO_HTTPS_URL% && git ls-remote --heads %GIT_REMOTE% %GIT_BRANCH% > /dev/null; fi"
+call :fn_run_ssh "%SERVER_USER%@%SERVER_HOST%" "!REMOTE_CMD!"
 if errorlevel 1 (
-	echo [ERROR] Server has no git access to private repository.
-	echo [HINT] Add deploy key on server and register it in GitHub repo Deploy keys.
-	echo [HINT] Check server key: ssh -T git@github.com
+	echo [ERROR] Server cannot access repository via current origin.
+	echo [HINT] Check remote URL and repository visibility.
+	echo [HINT] Current fallback URL: %GIT_REPO_HTTPS_URL%
 	exit /b 1
 )
 

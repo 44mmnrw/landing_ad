@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+
+# Service sections
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api
+Disallow: /api/
+Disallow: /storage/
+
+# Public pages are allowed by default
+Allow: /
